@@ -1,0 +1,20 @@
+# Configuración de despliegue para Render (Blueprint).
+# Al conectar el repositorio de GitHub, Render lee este archivo y crea el
+# servicio automáticamente con estos ajustes.
+services:
+  - type: web
+    name: automanual-convivencia
+    runtime: node
+    # El backend vive en backend/; Render clona el repositorio completo,
+    # así que backend/../frontend y backend/../documents siguen disponibles.
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    # Comprobación de salud: Render reinicia el servicio si deja de responder.
+    healthCheckPath: /api/salud
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: HOST
+        value: 0.0.0.0
+    plan: free

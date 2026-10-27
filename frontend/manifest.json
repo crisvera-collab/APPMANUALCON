@@ -1,0 +1,32 @@
+{
+  "name": "AutomanualVCP — Manual de Convivencia",
+  "short_name": "AutomanualVCP",
+  "description": "Consulta el Manual de Convivencia: pregúntale al chat, léelo completo o búscalo por tema.",
+  "lang": "es",
+  "start_url": "index.html",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#141d33",
+  "theme_color": "#141d33",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

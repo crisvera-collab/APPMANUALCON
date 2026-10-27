@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Buscar — AutomanualVCP</title>
+<meta name="description" content="Búsqueda en el manual de convivencia por palabra clave o categoría." />
+<meta name="theme-color" content="#141d33" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="assets/icons/favicon.png" />
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <img class="brand__logo" src="assets/icons/icon-192.png" alt="" />
+      <span class="brand__text">
+        <span class="brand__name">AutomanualVCP</span>
+        <span class="brand__tag">Manual de convivencia</span>
+      </span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html"><span class="nav-text">Inicio</span></a>
+      <a href="chat.html"><span class="nav-text">Chat</span></a>
+      <a href="manual.html"><span class="nav-text">Manual</span></a>
+      <a href="buscar.html" class="is-active"><span class="nav-text">Buscar</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom: 20px;">
+  <div class="hero__inner" style="grid-template-columns: 1fr;">
+    <div>
+      <p class="hero__eyebrow">Expediente digital · Consulta del manual</p>
+      <h1 style="font-size: clamp(26px, 3.4vw, 36px);">Busca un tema del manual</h1>
+      <p class="lede">Escribe una palabra clave o elige una categoría para ir directo al artículo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="paper-block">
+    <div class="search-bar">
+      <input id="buscar-input" type="search" placeholder="Escribe lo que buscas: llego tarde, pelearon, groserías, copiar un examen…" autocomplete="off" aria-label="Buscar en el manual" />
+      <button id="buscar-btn" type="button">Buscar</button>
+    </div>
+
+    <div class="filter-chips" id="buscar-chips">
+      <button class="chip is-active" type="button" data-categoria="todas">Todas</button>
+      <button class="chip" type="button" data-categoria="leve">Leves</button>
+      <button class="chip" type="button" data-categoria="grave">Graves</button>
+      <button class="chip" type="button" data-categoria="gravisima">Gravísimas</button>
+      <button class="chip" type="button" data-categoria="situacion">Situaciones</button>
+      <button class="chip" type="button" data-categoria="ruta">Rutas</button>
+      <button class="chip" type="button" data-categoria="beneficio">Beneficios</button>
+      <button class="chip" type="button" data-categoria="norma">Normas</button>
+    </div>
+
+    <p class="tag" id="buscar-count" role="status" aria-live="polite"></p>
+    <div class="result-list" id="buscar-resultados"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  AutomanualVCP — Búsqueda en el manual de referencia. Ante un caso real, confirma siempre con coordinación de convivencia.
+</footer>
+
+<script src="script.js"></script>
+<script>
+  initBusqueda({
+    inputSelector: "#buscar-input",
+    buttonSelector: "#buscar-btn",
+    chipsSelector: "#buscar-chips",
+    countSelector: "#buscar-count",
+    listSelector: "#buscar-resultados",
+  });
+</script>
+</body>
+</html>

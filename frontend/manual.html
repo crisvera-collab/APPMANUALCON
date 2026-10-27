@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manual original — AutomanualVCP</title>
+<meta name="description" content="Texto completo del manual de convivencia, organizado por categoría." />
+<meta name="theme-color" content="#141d33" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="assets/icons/favicon.png" />
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <img class="brand__logo" src="assets/icons/icon-192.png" alt="" />
+      <span class="brand__text">
+        <span class="brand__name">AutomanualVCP</span>
+        <span class="brand__tag">Manual de convivencia</span>
+      </span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html"><span class="nav-text">Inicio</span></a>
+      <a href="chat.html"><span class="nav-text">Chat</span></a>
+      <a href="manual.html" class="is-active"><span class="nav-text">Manual</span></a>
+      <a href="buscar.html"><span class="nav-text">Buscar</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom: 12px;">
+  <div class="hero__inner" style="grid-template-columns: 1fr;">
+    <div>
+      <p class="hero__eyebrow">Expediente digital · Texto oficial</p>
+      <h1 style="font-size: clamp(26px, 3.4vw, 36px);">El manual de convivencia, completo</h1>
+      <p class="lede">Organizado por categoría. Salta directo a una sección o léelo de principio a fin.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="paper-block">
+    <div class="manual-toolbar">
+      <p class="manual-toolbar__note">
+        Texto íntegro del documento oficial <strong>«Agenda y Manual de Convivencia 2026-2027»</strong>
+        del Colegio OEA I.E.D., capítulo por capítulo.
+      </p>
+      <a class="btn btn--ghost" href="/documents/ManualColegioOEA2026.pdf" target="_blank" rel="noopener">
+        Ver / descargar PDF oficial
+      </a>
+    </div>
+    <div class="manual-toc" id="manual-toc"></div>
+    <div id="manual-contenido"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  AutomanualVCP — Contenido de referencia. Ante un caso real, confirma siempre con coordinación de convivencia.
+</footer>
+
+<script src="script.js"></script>
+<script>
+  renderManualCompleto({ tocSelector: "#manual-toc", contentSelector: "#manual-contenido" });
+</script>
+</body>
+</html>

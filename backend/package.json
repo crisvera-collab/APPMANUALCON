@@ -1,0 +1,16 @@
+{
+  "name": "autom manualvcp-backend",
+  "version": "1.0.0",
+  "description": "Backend de AutomanualVCP — Manual de Convivencia Colegio OEA I.E.D.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "node build-manual.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

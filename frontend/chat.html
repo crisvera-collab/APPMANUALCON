@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chat — AutomanualVCP</title>
+<meta name="description" content="Chat de preguntas sobre el manual de convivencia escolar." />
+<meta name="theme-color" content="#141d33" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="assets/icons/favicon.png" />
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <img class="brand__logo" src="assets/icons/icon-192.png" alt="" />
+      <span class="brand__text">
+        <span class="brand__name">AutomanualVCP</span>
+        <span class="brand__tag">Manual de convivencia</span>
+      </span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html"><span class="nav-text">Inicio</span></a>
+      <a href="chat.html" class="is-active"><span class="nav-text">Chat</span></a>
+      <a href="manual.html"><span class="nav-text">Manual</span></a>
+      <a href="buscar.html"><span class="nav-text">Buscar</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom: 20px;">
+  <div class="hero__inner" style="grid-template-columns: 1fr;">
+    <div>
+      <p class="hero__eyebrow">Expediente digital · Consulta en vivo</p>
+      <h1 style="font-size: clamp(26px, 3.4vw, 36px);">Pregunta lo que necesites sobre el manual</h1>
+      <p class="lede">Escribe la situación con tus palabras. El asistente identifica el artículo, la gravedad, los pasos a seguir y sugerencias de apoyo, siempre con base en el manual.</p>
+    </div>
+  </div>
+</section>
+
+<div class="chat-shell">
+  <div class="chat-layout">
+    <aside class="chat-sidebar">
+      <h4>¿Cómo me atiendes?</h4>
+      <div class="role-switch" role="group" aria-label="Selecciona tu rol">
+        <button type="button" class="role-switch__btn is-active" data-rol="estudiante">Soy estudiante</button>
+        <button type="button" class="role-switch__btn" data-rol="docente">Soy docente</button>
+      </div>
+      <p class="role-switch__hint">Los pasos a seguir y las sugerencias se muestran según tu rol.</p>
+
+      <h4>Preguntas frecuentes</h4>
+      <div class="suggestion-list">
+        <button class="suggestion-btn" data-pregunta="¿Qué pasa si llego tarde varias veces?">¿Qué pasa si llego tarde varias veces?</button>
+        <button class="suggestion-btn" data-pregunta="Un compañero me insultó, ¿qué hago?">Un compañero me insultó, ¿qué hago?</button>
+        <button class="suggestion-btn" data-pregunta="¿Cuáles son los beneficios por buen comportamiento?">¿Beneficios por buen comportamiento?</button>
+        <button class="suggestion-btn" data-pregunta="¿Cuál es la ruta si hay una pelea?">¿Cuál es la ruta si hay una pelea?</button>
+        <button class="suggestion-btn" data-pregunta="¿Puedo apelar una sanción?">¿Puedo apelar una sanción?</button>
+      </div>
+
+      <h4>Gravedad de faltas</h4>
+      <div class="legend">
+        <div class="legend__row"><span class="legend__dot" style="background:#5f7a63"></span> Leve</div>
+        <div class="legend__row"><span class="legend__dot" style="background:#a8663a"></span> Grave</div>
+        <div class="legend__row"><span class="legend__dot" style="background:#8b2635"></span> Gravísima</div>
+        <div class="legend__row"><span class="legend__dot" style="background:#2f7d7d"></span> Situación (protocolo)</div>
+        <div class="legend__row"><span class="legend__dot" style="background:#4a5578"></span> Ruta</div>
+        <div class="legend__row"><span class="legend__dot" style="background:#c9a227"></span> Beneficio</div>
+        <div class="legend__row"><span class="legend__dot" style="background:#6b6f7a"></span> Norma</div>
+      </div>
+    </aside>
+
+    <div class="chat-main">
+      <div class="chat-panel is-active" data-panel="chat">
+        <div id="chat-messages" class="messages" aria-live="polite"></div>
+        <form id="chat-form" class="chat-input-row">
+          <input id="chat-input" type="text" placeholder="Escribe tu pregunta…" autocomplete="off" aria-label="Escribe tu pregunta" />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  AutomanualVCP — Las respuestas son una guía basada en el manual. Ante un caso real, confirma siempre con coordinación de convivencia.
+</footer>
+
+<script src="script.js"></script>
+<script>
+  initChat({
+    messagesSelector: "#chat-messages",
+    formSelector: "#chat-form",
+    inputSelector: "#chat-input",
+    suggestionSelector: ".suggestion-btn",
+    roleSelector: ".role-switch__btn",
+  });
+
+</script>
+</body>
+</html>

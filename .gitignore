@@ -1,0 +1,9 @@
+# Dependencias
+node_modules/
+
+# Logs del servidor local
+*.log
+
+# Archivos de Windows / utilidades locales que no necesitan ir al repositorio
+Thumbs.db
+.DS_Store
